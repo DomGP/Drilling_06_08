@@ -4,6 +4,7 @@ import Inicio from '@/views/Inicio.vue'
 import Personajes from '@/views/Personajes.vue'
 import Personaje from '@/views/Personaje.vue'
 import Contacto from '@/views/Contacto.vue'
+import NotFound from '@/views/NotFound.vue'
 
 
 Vue.use(VueRouter)
@@ -16,16 +17,22 @@ const routes = [
   },
   {
     path: '/personajes',
-    component: Personajes
+    component: Personajes,
+    alias:['/people','/characters']
   },
   {
     path: '/personajes/:id',
-    component: Personaje
+    component: Personaje,
+    props:true,
   },
   {
     path: '/contacto',
     component: Contacto
   },
+  {
+    path:'*',
+    component:NotFound
+  }
 
   //{
    // path: '/about',
